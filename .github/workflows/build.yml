@@ -1,0 +1,70 @@
+# Builds ape.density~ and ape.pulsaret~ on GitHub's own machines, with the current Max SDK
+# (max-sdk-base, downloaded by CMake at a fixed version). No local Windows machine is needed.
+#
+#   Windows  ->  externals/*.mxe64   (x64)
+#   macOS    ->  externals/*.mxo     (universal: Apple silicon + Intel)
+#
+# It runs on every push, on pull requests, and by hand: Actions tab -> Build -> "Run workflow".
+# The results are at the bottom of each run page, under "Artifacts".
+
+name: Build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  windows:
+    name: Windows (x64)
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure (Visual Studio, x64)
+        run: cmake -B build -A x64
+
+      - name: Build (Release)
+        run: cmake --build build --config Release
+
+      - name: List the results
+        shell: bash
+        run: ls -la externals
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ApeExternals-windows-x64
+          path: externals/*.mxe64
+          if-no-files-found: error
+
+  macos:
+    name: macOS (universal)
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure (Xcode)
+        run: cmake -G Xcode -B build
+
+      - name: Build (Release)
+        run: cmake --build build --config Release
+
+      - name: Check the architectures
+        run: |
+          for n in "ape.density~" "ape.pulsaret~"; do
+            lipo -archs "externals/$n.mxo/Contents/MacOS/$n"
+          done
+
+      # a .mxo is a folder: zip it with ditto so its code signature is kept
+      - name: Zip
+        run: |
+          mkdir -p dist
+          ditto -c -k --keepParent "externals/ape.density~.mxo"  "dist/ape.density~.mxo.zip"
+          ditto -c -k --keepParent "externals/ape.pulsaret~.mxo" "dist/ape.pulsaret~.mxo.zip"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ApeExternals-macos-universal
+          path: dist/*.zip
+          if-no-files-found: error

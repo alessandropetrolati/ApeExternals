@@ -1,0 +1,11 @@
+# the Max SDK is downloaded, not stored here
+max-sdk-base/
+# build products
+build/
+externals/
+distribuzione/
+dist/
+# Xcode, macOS
+xcuserdata/
+*.xcworkspace
+.DS_Store

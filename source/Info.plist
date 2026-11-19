@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<!--
+  Info.plist: la carta d'identita' del bundle.
+  Un external per macOS (.mxo) non e' un file solo: e' una cartella ("bundle") fatta cosi':
+      ape.density~.mxo/Contents/Info.plist          questo file, compilato
+      ape.density~.mxo/Contents/PkgInfo             otto lettere: tipo + firma (iLaXmax2)
+      ape.density~.mxo/Contents/MacOS/ape.density~  il codice: la libreria dinamica
+  Lo stesso file serve ai due oggetti: le parole $(...) sono variabili che Xcode riempie
+  con le impostazioni del target che sta compilando.
+-->
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<!-- il nome del file binario dentro Contents/MacOS: deve essere uguale al nome dell'oggetto -->
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<!-- un nome unico al mondo, scritto al contrario come un indirizzo web (it.apesoft...) -->
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>$(PRODUCT_NAME)</string>
+	<!-- tipo "iLaX" e firma "max2": da queste due parole Max riconosce un external -->
+	<key>CFBundlePackageType</key>
+	<string>iLaX</string>
+	<key>CFBundleSignature</key>
+	<string>max2</string>
+	<!-- la versione dell'oggetto (non dell'SDK) -->
+	<key>CFBundleVersion</key>
+	<string>1.1.0</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.1.0</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>Copyright (c) 2026 Alessandro Petrolati - www.apesoft.it</string>
+	<!-- voce storica dei progetti di Cycling '74: lasciata com'era -->
+	<key>CSResourcesFileMapped</key>
+	<true/>
+</dict>
+</plist>

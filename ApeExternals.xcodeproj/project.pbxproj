@@ -1,0 +1,501 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A9E600000000000000000001 /* ape.density~.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A9E600000000000000000002 /* ape.density~.cpp */; };
+		A9E600000000000000000003 /* apeDensity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A9E600000000000000000004 /* apeDensity.cpp */; };
+		A9E600000000000000000005 /* apeGranulator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A9E600000000000000000006 /* apeGranulator.cpp */; };
+		A9E600000000000000000007 /* ape.pulsaret~.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A9E600000000000000000008 /* ape.pulsaret~.cpp */; };
+		A9E600000000000000000009 /* apePulsaret.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A9E60000000000000000000A /* apePulsaret.cpp */; };
+		A9E60000000000000000000B /* apeGranulator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A9E600000000000000000006 /* apeGranulator.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A9E600000000000000000006 /* apeGranulator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "apeGranulator.cpp"; sourceTree = "<group>"; };
+		A9E60000000000000000000C /* apeGrain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "apeGrain.h"; sourceTree = "<group>"; };
+		A9E600000000000000000004 /* apeDensity.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "apeDensity.cpp"; sourceTree = "<group>"; };
+		A9E60000000000000000000D /* apeDensity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "apeDensity.h"; sourceTree = "<group>"; };
+		A9E60000000000000000000A /* apePulsaret.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "apePulsaret.cpp"; sourceTree = "<group>"; };
+		A9E60000000000000000000E /* apePulsaret.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "apePulsaret.h"; sourceTree = "<group>"; };
+		A9E600000000000000000002 /* ape.density~.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "ape.density~.cpp"; sourceTree = "<group>"; };
+		A9E60000000000000000000F /* ape.density~.maxhelp */ = {isa = PBXFileReference; lastKnownFileType = text; path = "ape.density~.maxhelp"; sourceTree = "<group>"; };
+		A9E600000000000000000010 /* ape.density~.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ape.density~.mxo"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9E600000000000000000008 /* ape.pulsaret~.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "ape.pulsaret~.cpp"; sourceTree = "<group>"; };
+		A9E600000000000000000011 /* ape.pulsaret~.maxhelp */ = {isa = PBXFileReference; lastKnownFileType = text; path = "ape.pulsaret~.maxhelp"; sourceTree = "<group>"; };
+		A9E600000000000000000012 /* ape.pulsaret~.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ape.pulsaret~.mxo"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9E600000000000000000013 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9E600000000000000000014 /* LEGGIMI.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LEGGIMI.md; sourceTree = "<group>"; };
+		A9E60000000000000000FF01 /* apeGranulator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "apeGranulator.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A9E600000000000000000015 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A9E600000000000000000016 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A9E600000000000000000017 = {
+			isa = PBXGroup;
+			children = (
+				A9E600000000000000000018 /* source */,
+				A9E600000000000000000019 /* help */,
+				A9E600000000000000000014 /* LEGGIMI.md */,
+				A9E60000000000000000001A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A9E600000000000000000018 /* source */ = {
+			isa = PBXGroup;
+			children = (
+				A9E60000000000000000001B /* nucleo */,
+				A9E60000000000000000001C /* ape.density~ */,
+				A9E60000000000000000001D /* ape.pulsaret~ */,
+				A9E600000000000000000013 /* Info.plist */,
+			);
+			path = "source";
+			sourceTree = "<group>";
+		};
+		A9E60000000000000000001B /* nucleo */ = {
+			isa = PBXGroup;
+			children = (
+				A9E60000000000000000000C /* apeGrain.h */,
+				A9E600000000000000000006 /* apeGranulator.cpp */,
+				A9E60000000000000000FF01 /* apeGranulator.h */,
+				A9E600000000000000000004 /* apeDensity.cpp */,
+				A9E60000000000000000000D /* apeDensity.h */,
+				A9E60000000000000000000A /* apePulsaret.cpp */,
+				A9E60000000000000000000E /* apePulsaret.h */,
+			);
+			path = "nucleo";
+			sourceTree = "<group>";
+		};
+		A9E60000000000000000001C /* ape.density~ */ = {
+			isa = PBXGroup;
+			children = (
+				A9E600000000000000000002 /* ape.density~.cpp */,
+			);
+			path = "ape.density~";
+			sourceTree = "<group>";
+		};
+		A9E60000000000000000001D /* ape.pulsaret~ */ = {
+			isa = PBXGroup;
+			children = (
+				A9E600000000000000000008 /* ape.pulsaret~.cpp */,
+			);
+			path = "ape.pulsaret~";
+			sourceTree = "<group>";
+		};
+		A9E600000000000000000019 /* help */ = {
+			isa = PBXGroup;
+			children = (
+				A9E60000000000000000000F /* ape.density~.maxhelp */,
+				A9E600000000000000000011 /* ape.pulsaret~.maxhelp */,
+			);
+			path = "help";
+			sourceTree = "<group>";
+		};
+		A9E60000000000000000001A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A9E600000000000000000010 /* ape.density~.mxo */,
+				A9E600000000000000000012 /* ape.pulsaret~.mxo */,
+			);
+			name = "Products";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A9E60000000000000000001E /* ape.density~ */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A9E60000000000000000001F /* Build configuration list for PBXNativeTarget "ape.density~" */;
+			buildPhases = (
+				A9E600000000000000000020 /* Sources */,
+				A9E600000000000000000015 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ape.density~";
+			productName = "ape.density~";
+			productReference = A9E600000000000000000010 /* ape.density~.mxo */;
+			productType = "com.apple.product-type.bundle";
+		};
+		A9E600000000000000000021 /* ape.pulsaret~ */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A9E600000000000000000022 /* Build configuration list for PBXNativeTarget "ape.pulsaret~" */;
+			buildPhases = (
+				A9E600000000000000000023 /* Sources */,
+				A9E600000000000000000016 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ape.pulsaret~";
+			productName = "ape.pulsaret~";
+			productReference = A9E600000000000000000012 /* ape.pulsaret~.mxo */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A9E600000000000000000024 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 2720;
+				ORGANIZATIONNAME = apeSoft;
+			};
+			buildConfigurationList = A9E600000000000000000025 /* Build configuration list for PBXProject "ApeExternals" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A9E600000000000000000017;
+			productRefGroup = A9E60000000000000000001A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A9E60000000000000000001E /* ape.density~ */,
+				A9E600000000000000000021 /* ape.pulsaret~ */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A9E600000000000000000020 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9E600000000000000000001 /* ape.density~.cpp in Sources */,
+				A9E600000000000000000003 /* apeDensity.cpp in Sources */,
+				A9E600000000000000000005 /* apeGranulator.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A9E600000000000000000023 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9E600000000000000000007 /* ape.pulsaret~.cpp in Sources */,
+				A9E600000000000000000009 /* apePulsaret.cpp in Sources */,
+				A9E60000000000000000000B /* apeGranulator.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		A9E600000000000000000026 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DEAD_CODE_STRIPPING = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+			};
+			name = Debug;
+		};
+		A9E600000000000000000027 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DEAD_CODE_STRIPPING = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+			};
+			name = Release;
+		};
+		A9E600000000000000000028 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				C74SUPPORT = "$(SRCROOT)/max-sdk-base/c74support";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/externals";
+				DEAD_CODE_STRIPPING = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(C74SUPPORT)/msp-includes\"",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GENERATE_PKGINFO_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/source/nucleo\"",
+					"\"$(C74SUPPORT)\"",
+					"\"$(C74SUPPORT)/max-includes\"",
+					"\"$(C74SUPPORT)/msp-includes\"",
+					"\"$(C74SUPPORT)/jit-includes\"",
+				);
+				INFOPLIST_FILE = source/Info.plist;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				OTHER_LDFLAGS = (
+					"\"@$(C74SUPPORT)/max-includes/c74_linker_flags.txt\"",
+					"-framework",
+					MaxAudioAPI,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "it.apesoft.ape-density";
+				PRODUCT_NAME = "ape.density~";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = mxo;
+			};
+			name = Debug;
+		};
+		A9E600000000000000000029 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				C74SUPPORT = "$(SRCROOT)/max-sdk-base/c74support";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/externals";
+				DEAD_CODE_STRIPPING = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(C74SUPPORT)/msp-includes\"",
+					"$(inherited)",
+				);
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GENERATE_PKGINFO_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/source/nucleo\"",
+					"\"$(C74SUPPORT)\"",
+					"\"$(C74SUPPORT)/max-includes\"",
+					"\"$(C74SUPPORT)/msp-includes\"",
+					"\"$(C74SUPPORT)/jit-includes\"",
+				);
+				INFOPLIST_FILE = source/Info.plist;
+				LLVM_LTO = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(inherited)",
+					"-fno-math-errno",
+				);
+				"OTHER_CPLUSPLUSFLAGS[arch=arm64]" = (
+					"$(inherited)",
+					"-fno-math-errno",
+					"-mcpu=apple-m1",
+				);
+				OTHER_LDFLAGS = (
+					"\"@$(C74SUPPORT)/max-includes/c74_linker_flags.txt\"",
+					"-framework",
+					MaxAudioAPI,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "it.apesoft.ape-density";
+				PRODUCT_NAME = "ape.density~";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = mxo;
+			};
+			name = Release;
+		};
+		A9E60000000000000000002A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				C74SUPPORT = "$(SRCROOT)/max-sdk-base/c74support";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/externals";
+				DEAD_CODE_STRIPPING = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(C74SUPPORT)/msp-includes\"",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GENERATE_PKGINFO_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/source/nucleo\"",
+					"\"$(C74SUPPORT)\"",
+					"\"$(C74SUPPORT)/max-includes\"",
+					"\"$(C74SUPPORT)/msp-includes\"",
+					"\"$(C74SUPPORT)/jit-includes\"",
+				);
+				INFOPLIST_FILE = source/Info.plist;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				OTHER_LDFLAGS = (
+					"\"@$(C74SUPPORT)/max-includes/c74_linker_flags.txt\"",
+					"-framework",
+					MaxAudioAPI,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "it.apesoft.ape-pulsaret";
+				PRODUCT_NAME = "ape.pulsaret~";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = mxo;
+			};
+			name = Debug;
+		};
+		A9E60000000000000000002B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				C74SUPPORT = "$(SRCROOT)/max-sdk-base/c74support";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/externals";
+				DEAD_CODE_STRIPPING = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(C74SUPPORT)/msp-includes\"",
+					"$(inherited)",
+				);
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GENERATE_PKGINFO_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/source/nucleo\"",
+					"\"$(C74SUPPORT)\"",
+					"\"$(C74SUPPORT)/max-includes\"",
+					"\"$(C74SUPPORT)/msp-includes\"",
+					"\"$(C74SUPPORT)/jit-includes\"",
+				);
+				INFOPLIST_FILE = source/Info.plist;
+				LLVM_LTO = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(inherited)",
+					"-fno-math-errno",
+				);
+				"OTHER_CPLUSPLUSFLAGS[arch=arm64]" = (
+					"$(inherited)",
+					"-fno-math-errno",
+					"-mcpu=apple-m1",
+				);
+				OTHER_LDFLAGS = (
+					"\"@$(C74SUPPORT)/max-includes/c74_linker_flags.txt\"",
+					"-framework",
+					MaxAudioAPI,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "it.apesoft.ape-pulsaret";
+				PRODUCT_NAME = "ape.pulsaret~";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = mxo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A9E600000000000000000025 /* Build configuration list for PBXProject "ApeExternals" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A9E600000000000000000026 /* Debug */,
+				A9E600000000000000000027 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A9E60000000000000000001F /* Build configuration list for PBXNativeTarget "ape.density~" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A9E600000000000000000028 /* Debug */,
+				A9E600000000000000000029 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A9E600000000000000000022 /* Build configuration list for PBXNativeTarget "ape.pulsaret~" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A9E60000000000000000002A /* Debug */,
+				A9E60000000000000000002B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A9E600000000000000000024 /* Project object */;
+}

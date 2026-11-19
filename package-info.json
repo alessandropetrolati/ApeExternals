@@ -1,0 +1,17 @@
+{
+	"name" : "ApeExternals",
+	"displayname" : "apeSoft externals",
+	"version" : "1.1.0",
+	"author" : "Alessandro Petrolati",
+	"authors" : [ "Alessandro Petrolati" ],
+	"description" : "ape.density~ e ape.pulsaret~: granulatori per Max/MSP (apeSoft)",
+	"tags" : [ "granular", "audio" ],
+	"website" : "https://www.apesoft.it",
+	"reverse_domain" : "it.apesoft",
+	"copyright" : "Copyright (c) 2026 Alessandro Petrolati",
+	"max_version_min" : "8.2",
+	"max_version_max" : "none",
+	"os" : {
+		"macintosh" : { "platform" : [ "x64", "aarch64" ], "min_version" : "12.0" }
+	}
+}
