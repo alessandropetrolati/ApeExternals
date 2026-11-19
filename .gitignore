@@ -9,3 +9,8 @@ dist/
 xcuserdata/
 *.xcworkspace
 .DS_Store
+# macOS: the custom icon of a folder is a file named "Icon" + a carriage return; Windows cannot check it out
+Icon?
+# these two folders end with "~": keep them even where a global rule ignores "*~"
+!source/ape.density~/
+!source/ape.pulsaret~/
