@@ -22,20 +22,25 @@ Notes:
 ## Installation
 
 This folder, `ApeExternals`, is a **Max package**: copy the whole folder, without opening it.
+There is one package for macOS and one for Windows; the steps are the same.
 
 1. Quit Max.
-2. Open the folder `Documents/Max 9/Packages` (for Max 8: `Documents/Max 8/Packages`).
-   On Windows the folder is the same, inside your `Documents`.
-   If the `Packages` folder is not there, create it.
+2. Open the `Packages` folder of Max. If it is not there, create it.
+   - macOS: `Documents/Max 9/Packages` (for Max 8: `Documents/Max 8/Packages`)
+   - Windows: `Documents\Max 9\Packages` (for Max 8: `Documents\Max 8\Packages`)
 3. Copy the whole `ApeExternals` folder into it.
 4. If you have an older version of the same objects, remove it: Max must find only one.
 5. Open Max.
+
+**Windows, before you unzip.** Windows marks a zip file that comes from the Internet, and the
+files inside can stay blocked. Right-click the zip file, choose *Properties*, tick *Unblock*
+at the bottom of the window, press *OK*. Then extract it.
 
 ## Try it
 
 1. In a new patcher type `ape.density~`.
 2. The Max Console shows the line `ape.density~ 1.2 by Alessandro Petrolati …`.
-3. Hold Option (⌥) and click the object: its help file opens.
+3. Open the help file of the object: Option-click it (macOS) or Alt-click it (Windows).
 4. Turn the audio on and click the first toggle at the top left (`start`).
 
 Do the same with `ape.pulsaret~`.
@@ -43,16 +48,22 @@ Do the same with `ape.pulsaret~`.
 ## If Max does not load the object
 
 **"ape.density~: no such object"**
-The folder is not in the right place. Check that this file exists:
-`Documents/Max 9/Packages/ApeExternals/externals/ape.density~.mxo`.
+The folder is not in the right place. Check that the object file exists:
+- macOS: `Documents/Max 9/Packages/ApeExternals/externals/ape.density~.mxo`
+- Windows: `Documents\Max 9\Packages\ApeExternals\externals\ape.density~.mxe64`
 
-**"cannot be loaded due to system security policy", or "is damaged"**
+**macOS: "cannot be loaded due to system security policy", or "is damaged"**
 This happens when the package arrives from the Internet or by e-mail: macOS puts it in quarantine.
 Open Terminal and type (for Max 8 change the number):
 
     xattr -dr com.apple.quarantine ~/Documents/Max\ 9/Packages/ApeExternals
 
 Then quit Max and open it again.
+
+**Windows: the object is found but Max cannot load it**
+The file is probably still blocked. Right-click `ape.density~.mxe64`, choose *Properties*,
+tick *Unblock*, press *OK*. Do the same for `ape.pulsaret~.mxe64`. Then quit Max and open it again.
+The Windows objects need nothing else: no Visual C++ package has to be installed.
 
 ## What is in the folder
 
