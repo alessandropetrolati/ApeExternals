@@ -1,13 +1,22 @@
 # Builds ape.density~ and ape.pulsaret~ on GitHub's own machines, with the current Max SDK
-# (max-sdk-base, downloaded by CMake at a fixed version). No local Windows machine is needed.
+# (max-sdk-base, downloaded by CMake at a fixed version), and makes the Max package for each
+# system. No local Windows machine is needed.
 #
-#   Windows  ->  externals/*.mxe64   (x64)
-#   macOS    ->  externals/*.mxo     (universal: Apple silicon + Intel)
-#   package  ->  the Max package, as costruisci.command makes it on a Mac, with the objects
-#                for both systems: ApeExternals-<version>-macOS-Windows.zip
+# A Max package is a folder to copy into Documents/Max 9/Packages (or Max 8):
+#
+#   ApeExternals/
+#     externals/           the objects: .mxo (macOS) or .mxe64 (Windows)
+#     help/                the help patchers
+#     package-info.json
+#     README.md
+#
+# It is the same folder that costruisci.command makes on a Mac.
+#
+# Results (at the bottom of each run page, under "Artifacts"):
+#   ApeExternals-<version>-macOS     universal objects: Apple silicon + Intel
+#   ApeExternals-<version>-Windows   64-bit objects
 #
 # It runs on every push, on pull requests, and by hand: Actions tab -> Build -> "Run workflow".
-# The results are at the bottom of each run page, under "Artifacts".
 
 name: Build
 
@@ -19,8 +28,11 @@ on:
 
 jobs:
   windows:
-    name: Windows (x64)
+    name: Windows package (x64)
     runs-on: windows-latest
+    defaults:
+      run:
+        shell: bash                  # the same commands as on macOS
     steps:
       - uses: actions/checkout@v4
 
@@ -30,18 +42,27 @@ jobs:
       - name: Build (Release)
         run: cmake --build build --config Release
 
-      - name: List the results
-        shell: bash
-        run: ls -la externals
+      - name: Make the Max package
+        run: |
+          version=$(sed -n 's/.*"version" *: *"\([^"]*\)".*/\1/p' package-info.json | head -1)
+          echo "VERSION=$version" >> "$GITHUB_ENV"
+          pkg="package/ApeExternals"
+          mkdir -p "$pkg/externals" "$pkg/help"
+          cp externals/*.mxe64 "$pkg/externals/"
+          cp help/*.maxhelp "$pkg/help/"
+          cp package-info.json "$pkg/"
+          cp help/README.md "$pkg/README.md"
+          ls -R package
 
+      # the artifact is the zip: inside there is the ApeExternals folder
       - uses: actions/upload-artifact@v4
         with:
-          name: ApeExternals-windows-x64
-          path: externals/*.mxe64
+          name: ApeExternals-${{ env.VERSION }}-Windows
+          path: package
           if-no-files-found: error
 
   macos:
-    name: macOS (universal)
+    name: macOS package (universal)
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v4
@@ -58,51 +79,24 @@ jobs:
             lipo -archs "externals/$n.mxo/Contents/MacOS/$n"
           done
 
-      # a .mxo is a folder: zip it with ditto so its code signature is kept
-      - name: Zip
-        run: |
-          mkdir -p dist
-          ditto -c -k --keepParent "externals/ape.density~.mxo"  "dist/ape.density~.mxo.zip"
-          ditto -c -k --keepParent "externals/ape.pulsaret~.mxo" "dist/ape.pulsaret~.mxo.zip"
-
-      - uses: actions/upload-artifact@v4
-        with:
-          name: ApeExternals-macos-universal
-          path: dist/*.zip
-          if-no-files-found: error
-
-  # The Max package: the same folder that costruisci.command makes on a Mac
-  # (externals, help, package-info.json, README.md), here with the objects for both systems.
-  package:
-    name: Max package (macOS + Windows)
-    needs: [ windows, macos ]
-    runs-on: macos-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/download-artifact@v4
-        with:
-          path: artifacts              # one folder for each artifact
-
-      - name: Assemble the package
+      - name: Make the Max package
         run: |
           version=$(sed -n 's/.*"version" *: *"\([^"]*\)".*/\1/p' package-info.json | head -1)
           echo "VERSION=$version" >> "$GITHUB_ENV"
           pkg="package/ApeExternals"
           mkdir -p "$pkg/externals" "$pkg/help"
-          # macOS: the .mxo bundles were zipped with ditto, open them the same way
-          for z in artifacts/ApeExternals-macos-universal/*.zip; do ditto -x -k "$z" "$pkg/externals"; done
-          # Windows: the .mxe64 files
-          cp artifacts/ApeExternals-windows-x64/*.mxe64 "$pkg/externals/"
+          # a .mxo is a folder: ditto copies it without breaking its code signature
+          ditto "externals/ape.density~.mxo"  "$pkg/externals/ape.density~.mxo"
+          ditto "externals/ape.pulsaret~.mxo" "$pkg/externals/ape.pulsaret~.mxo"
           cp help/*.maxhelp "$pkg/help/"
           cp package-info.json "$pkg/"
           cp help/README.md "$pkg/README.md"
           ls -R package
           mkdir -p dist
-          ditto -c -k --keepParent "$pkg" "dist/ApeExternals-$version-macOS-Windows.zip"
+          ditto -c -k --keepParent "$pkg" "dist/ApeExternals-$version-macOS.zip"
 
       - uses: actions/upload-artifact@v4
         with:
-          name: ApeExternals-${{ env.VERSION }}-package
+          name: ApeExternals-${{ env.VERSION }}-macOS
           path: dist/*.zip
           if-no-files-found: error

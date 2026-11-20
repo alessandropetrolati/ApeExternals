@@ -12,7 +12,7 @@ Version 1.2 (2026).
 | | Works with | Does not work with |
 |---|---|---|
 | **Processor** | Apple silicon (M1, M2, M3, M4 and later) and 64-bit Intel. The objects are "universal": one file for both kinds of Mac | 32-bit Macs, PowerPC |
-| **System** | macOS 12 Monterey or later. Windows 64-bit: only in the package built on GitHub (it contains the `.mxe64` files); **not tested yet in Max for Windows** | macOS 11 or earlier; 32-bit Windows |
+| **System** | macOS 12 Monterey or later. Windows 64-bit, with the Windows package (it contains the `.mxe64` files): **not tested yet in Max for Windows** | macOS 11 or earlier; 32-bit Windows |
 | **Max** | Max 8.2 or later, Max 9 | Max 8.1 or earlier, Max 7 |
 
 Notes:
