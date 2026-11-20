@@ -3,6 +3,8 @@
 #
 #   Windows  ->  externals/*.mxe64   (x64)
 #   macOS    ->  externals/*.mxo     (universal: Apple silicon + Intel)
+#   package  ->  the Max package, as costruisci.command makes it on a Mac, with the objects
+#                for both systems: ApeExternals-<version>-macOS-Windows.zip
 #
 # It runs on every push, on pull requests, and by hand: Actions tab -> Build -> "Run workflow".
 # The results are at the bottom of each run page, under "Artifacts".
@@ -66,5 +68,41 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: ApeExternals-macos-universal
+          path: dist/*.zip
+          if-no-files-found: error
+
+  # The Max package: the same folder that costruisci.command makes on a Mac
+  # (externals, help, package-info.json, README.md), here with the objects for both systems.
+  package:
+    name: Max package (macOS + Windows)
+    needs: [ windows, macos ]
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/download-artifact@v4
+        with:
+          path: artifacts              # one folder for each artifact
+
+      - name: Assemble the package
+        run: |
+          version=$(sed -n 's/.*"version" *: *"\([^"]*\)".*/\1/p' package-info.json | head -1)
+          echo "VERSION=$version" >> "$GITHUB_ENV"
+          pkg="package/ApeExternals"
+          mkdir -p "$pkg/externals" "$pkg/help"
+          # macOS: the .mxo bundles were zipped with ditto, open them the same way
+          for z in artifacts/ApeExternals-macos-universal/*.zip; do ditto -x -k "$z" "$pkg/externals"; done
+          # Windows: the .mxe64 files
+          cp artifacts/ApeExternals-windows-x64/*.mxe64 "$pkg/externals/"
+          cp help/*.maxhelp "$pkg/help/"
+          cp package-info.json "$pkg/"
+          cp help/README.md "$pkg/README.md"
+          ls -R package
+          mkdir -p dist
+          ditto -c -k --keepParent "$pkg" "dist/ApeExternals-$version-macOS-Windows.zip"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ApeExternals-${{ env.VERSION }}-package
           path: dist/*.zip
           if-no-files-found: error

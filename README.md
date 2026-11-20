@@ -61,6 +61,8 @@ The objects are written into `externals/`.
 **Windows without a Windows machine.** Every push is built by GitHub Actions
 (see `.github/workflows/build.yml`). Open the *Actions* tab, choose the latest run and download
 `ApeExternals-windows-x64` from *Artifacts*.
+The same run also makes the complete Max package for both systems:
+`ApeExternals-<version>-package` (inside: `ApeExternals-<version>-macOS-Windows.zip`).
 
 **Test of the engines, without Max:**
 

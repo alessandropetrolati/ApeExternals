@@ -12,6 +12,7 @@
 	"max_version_min" : "8.2",
 	"max_version_max" : "none",
 	"os" : {
-		"macintosh" : { "platform" : [ "x64", "aarch64" ], "min_version" : "12.0" }
+		"macintosh" : { "platform" : [ "x64", "aarch64" ], "min_version" : "12.0" },
+		"windows" : { "platform" : [ "x64" ], "min_version" : "none" }
 	}
 }
